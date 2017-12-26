@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+  <head>
+    <meta charset="utf-8">
+    <title> MVC 模式初见</title>
+    <script src="../angular-1.6.8/angular.js"></script>
+  </head>
+  <body>
+    <div ng-controller="helloAngular">
+        <p>{{ greeting.text}}, Angular</p>
+    </div>
+    <script>
+    var app = angular.module('myapp',[]);
+    app.controller("helloAngular",['$scope',function($scope){
+      $scope.greeting = {
+        text:"hello"
+      }
+    }
+
+  ])
+
+
+    </script>
+  </body>
+</html>

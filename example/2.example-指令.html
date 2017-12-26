@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+  <head>
+    <meta charset="utf-8">
+    <title>指令系统</title>
+    <script src="../angular-1.6.8/angular.js"> </script>
+  </head>
+  <body>
+    <hello></hello>
+  </body>
+  <script>
+      var app = angular.module('myapp',[]);
+      app.directive('hello',function(){
+        return {
+          restrict:"E",
+          template:'<p>Hello angular</p>',
+          replace:true
+        }
+      });
+  </script>
+</html>
