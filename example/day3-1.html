@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app="myapp">
+
+<head>
+	<meta charset="utf-8">
+	<title> 模块化的实现</title>
+</head>
+
+<body>
+	<div class="show-scope-demo">
+		<div ng-controller="GreetCtrl">
+			Hello {{name}}!
+		</div>
+
+	</div>
+</body>
+<script src="../angular-1.6.8/angular.js"></script>
+<script>
+	var app = angular.module('myapp', []);  // 使用angular.module来进行模块定义
+
+//在app上调用controller 进行控制器的定义.
+	app.controller("GreetCtrl", ["$scope", "$rootScope", function($scope, $rootScope) {
+		$scope.name = 'World';
+		$rootScope.department = 'Angular';
+	}]);
+
+</script>
+
+</html>

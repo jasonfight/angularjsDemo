@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app="myapp">
+
+<head>
+	<meta charset="utf-8">
+</head>
+
+<body>
+	<div class="show-scope-demo">
+		<div ng-controller="GreetCtrl">
+			Hello {{name}}!
+		</div>
+		<div ng-controller="ListCtrl">
+			<ol>
+				<li ng-repeat="name in names">
+					{{name}} from {{department}}
+				</li>
+			</ol>
+		</div>
+	</div>
+</body>
+<script src="../angular-1.6.8/angular.js"></script>
+<script>
+	var app = angular.module('myapp', []);
+
+	app.controller("GreetCtrl", ["$scope", "$rootScope", function($scope, $rootScope) {
+		$scope.name = 'World';
+		$rootScope.department = 'Angular';
+	}]);
+
+	app.controller("ListCtrl", ["$scope", "$rootScope", function($scope, $rootScope) {
+		$scope.names = ['jason', 'guohao', 'sky'];
+	}]);
+
+</script>
+
+</html>
