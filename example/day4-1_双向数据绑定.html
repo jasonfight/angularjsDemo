@@ -3,21 +3,14 @@
 
 <head>
 	<meta charset="utf-8">
-	<title> 模块化的实现</title>
-	<style>
-		a{
-			background: rgb(10,100,100);
+	<title> 双向数据绑定</title>
 
-		}
-	</style>
 </head>
 
 <body>
 	<div class="show-scope-demo">
-		<div ng-controller="GreetCtrl">
-			Hello {{name}}!
+		<div ng-controller="GreetCtrl" ng-bind="name">
 		</div>
-
 	</div>
 </body>
 <script src="../angular-1.6.8/angular.js"></script>
