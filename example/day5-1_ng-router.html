@@ -1,0 +1,45 @@
+<!doctype html>
+<html ng-app="myapp">
+
+<head>
+	<meta charset="utf-8">
+	<title> 双向数据绑定(样式)</title>
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+	<script src="../jquery-3.2.1.js"></script>
+	<script src="../bootstrap/js/bootstrap.js"></script>
+
+</head>
+
+<body>
+	<!-- <div ng-controller="showCtrl">
+		<h2 ng-show="isShow.show">ng-show 双向绑定测试</h2>
+		<h2 ng-hide="isShow.show">ng-hide 双向绑定测试</h2>
+		<h2 ng-if="isShow.show">ng-if 双向绑定测试</h2>
+		<button class="btn btn-default" ng-click="toggle()">绿色</button>
+	</div> -->
+	<div ng-controller="BookCtrl"></div>
+</body>
+<script src="../angular-1.6.8/angular.js"></script>
+<script src="../angular-1.6.8/angular-route.js"></script>
+<script>
+	var app = angular.module('myapp', ['ngRoute']);  // 使用angular.module来进行模块定义
+
+	app.config(function($routeProvider){
+		$routeProvider.when('./hello',{
+			template:"<h1>hello</h1>",
+			controller:"HelloCtrl"
+		});
+		$routeProvider.when('/list',{
+			template:"<h1>list</h1>",
+			controller:"BookCtrl"
+		});
+		$routeProvider.otherwise({
+			redirectTo:'/hello'
+		})
+	})
+
+
+
+</script>
+
+</html>
